@@ -154,6 +154,12 @@
       "email": "bob@bob.com",
       "isAdmin": false,
       "id": 3
+    },
+    {
+      "name": "Javontae Hardeman",
+      "email": "hardeman.javontae@gmail.com",
+      "isAdmin": false,
+      "id": 4
     }
   ],
   "orders": [],
