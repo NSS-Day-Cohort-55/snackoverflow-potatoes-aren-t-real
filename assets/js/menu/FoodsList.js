@@ -13,3 +13,12 @@ export const FoodList = () => {
     })
     
 }
+
+export const sortByPrice = () => {
+    // let sortedArr = []
+    MenuManger.getFoods().price
+    .then(foodArr => {
+        console.log(foodArr)
+        // foodArr.sort(function(a, b){return a - b}) 
+    })
+}
