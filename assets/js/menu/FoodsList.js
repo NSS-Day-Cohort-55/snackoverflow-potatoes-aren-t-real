@@ -1,6 +1,11 @@
 import * as MenuManger from './MenuManger.js';
 import { FoodCard } from './FoodCard.js'
 
+const sortByPrice = (array) => {
+    array.sort(function(a, b){return a.price - b.price})
+    return array
+}
+
 export const FoodList = () => {
     const contentTarget = document.querySelector("main");
     let lunchHTMLString;
@@ -25,6 +30,11 @@ export const FoodList = () => {
         }
     })
 
+        sortByPrice(lunchArray)
+        sortByPrice(dessertArray)
+        sortByPrice(drinkArray)
+        sortByPrice(appArray)
+
         lunchHTMLString = `<h2>Lunch</h2>`
         lunchHTMLString += `<div class="row lunch">`
         lunchHTMLString += lunchArray.map(food => FoodCard(food)).join('')
@@ -46,14 +56,5 @@ export const FoodList = () => {
         dessertHTMLString += `</div>`
 
         contentTarget.innerHTML = lunchHTMLString + drinkHTMLString + appHTMLString + dessertHTMLString
-    })
-}
-
-export const sortByPrice = () => {
-    // let sortedArr = []
-    MenuManger.getFoods().price
-    .then(foodArr => {
-        console.log(foodArr)
-        // foodArr.sort(function(a, b){return a - b}) 
     })
 }
