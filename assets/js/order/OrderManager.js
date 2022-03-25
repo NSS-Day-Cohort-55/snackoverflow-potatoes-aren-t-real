@@ -5,6 +5,10 @@ export const getOrders = () => {
     .then(response => response.json())
 }
 
+getOrdersByUser = (userObj) => {
+    return fetch(`${apiURL}/orders?userId=${userObj.id}&_embed=orderFoods&_expand=foods`).then(res => res.json());
+}
+
 export const getOrderFoods = () => {
     return fetch(`${apiURL}/orderFoods`)
     .then(response => response.json())
