@@ -20,3 +20,8 @@ nav img {
 .navbar-nav {
     padding-top: 2rem;
 }
+
+.btn {
+    width: 100%;
+    background-color: goldenrod;
+}

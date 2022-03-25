@@ -9,6 +9,8 @@ const sortByPrice = (array) => {
   return array;
 };
 
+export const orderBuilder = []
+
 export const FoodList = (Username) => {
   const loggedIn = Object.keys(Usermanager.getLoggedInUser()).length;
   const contentTarget = document.querySelector("main");
@@ -84,3 +86,4 @@ export const FoodList = (Username) => {
       dessertHTMLString;
   });
 };
+
