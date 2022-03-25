@@ -1,6 +1,5 @@
 import * as UserManager from "./UserManager.js";
-import { NavBar } from "../NavBar.js";
-import { FoodList } from "../menu/FoodsList.js";
+import { CheckForUser } from "./CheckForUser.js";
 
 export const LoginForm = () => {
   return `
@@ -35,22 +34,19 @@ export const LoginForm = () => {
          </div>
          </div>
          
-         `
-}
+         `;
+};
 
 const contentElement = document.querySelector("main");
 
-contentElement.addEventListener("click", event => {
-  if (event.target.id === "login__submit"){
+contentElement.addEventListener("click", (event) => {
+  if (event.target.id === "login__submit") {
     const userObject = {
       name: document.querySelector("#login_name").value,
       email: document.querySelector("#login_email").value,
-    }
+    };
     UserManager.loginUser(userObject).then(() => {
-      NavBar();
-      FoodList()
-    })
-    
+      CheckForUser();
+    });
   }
-
-})
+});
