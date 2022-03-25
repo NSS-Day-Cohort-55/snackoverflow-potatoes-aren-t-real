@@ -37,21 +37,15 @@ export const postOrder = (orderObj) => {
 export const deleteOrder = (orderObj) => {
     const fetchOptions = {
         method: "DELETE",
-        headers: {
-            "Content-Type": "application/json"
-        },
     }
 
-    return fetch(`http://localhost:8088/orders`, fetchOptions)
+    return fetch(`http://localhost:8088/orders/${orderObj.id}`, fetchOptions)
 }
 
 export const deleteOrderFood = (orderFoodObj) => {
     const fetchOptions = {
         method: "DELETE",
-        headers: {
-            "Content-Type": "application/json"
-        },
     }
 
-    return fetch(`http://localhost:8088/orderFoods`, fetchOptions)
+    return fetch(`http://localhost:8088/orderFoods/${orderFoodObj.id}`, fetchOptions)
 }
