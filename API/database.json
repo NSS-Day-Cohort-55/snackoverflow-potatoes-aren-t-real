@@ -154,6 +154,12 @@
       "email": "bob@bob.com",
       "isAdmin": false,
       "id": 3
+    },
+    {
+      "name": "davos",
+      "email": "davos@cat.com",
+      "isAdmin": false,
+      "id": 4
     }
   ],
   "orders": [],
