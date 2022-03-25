@@ -1,5 +1,6 @@
-export const FoodCard = (foodObj) => {
-  return `
+export const FoodCard = (foodObj, loggedIn) => {
+
+    return `
     <div class="col-sm-6 g-4">
         <div class="card">
         <div class="h-100">
@@ -11,12 +12,13 @@ export const FoodCard = (foodObj) => {
                 <h5 class="card-title">${foodObj.name}</h5>
                 <p class="card-text">${foodObj.description}</p>
                 <p>Price: $${foodObj.price}</p>
+                <!-- show only if logged in -->
+                ${loggedIn ? `<button type="button" class="btn btn-primary">Example Bootstrap Button</button>` : ``}
                 <p>${
                   foodObj.isVegetarian
                     ? `<img src ="./assets/images/icon-veg.png" alt="IsVegetarian">`
                     : ""
                 }</p>
-                <!-- <button type="button" class="btn btn-primary">Example Bootstrap Button</button> -->
             </div>
         </div>
     </div>
