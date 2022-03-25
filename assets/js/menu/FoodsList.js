@@ -2,6 +2,13 @@ import * as MenuManger from "./MenuManger.js";
 import * as Usermanager from "../auth/UserManager.js";
 import { FoodCard } from "./FoodCard.js";
 
+const sortByPrice = (array) => {
+  array.sort(function (a, b) {
+    return a.price - b.price;
+  });
+  return array;
+};
+
 export const FoodList = (Username) => {
   const loggedIn = Object.keys(Usermanager.getLoggedInUser()).length;
   const contentTarget = document.querySelector("main");
@@ -27,9 +34,21 @@ export const FoodList = (Username) => {
       }
     });
 
+    sortByPrice(lunchArray);
+    sortByPrice(dessertArray);
+    sortByPrice(drinkArray);
+    sortByPrice(appArray);
+
     Username
       ? (nameHTMLString = `<h1>Welcome ${Username}!</h1>`)
       : (nameHTMLString = "");
+
+    lunchHTMLString = `<h2>Lunch</h2>`;
+    lunchHTMLString += `<div class="row lunch">`;
+    lunchHTMLString += lunchArray
+      .map((food) => FoodCard(food, loggedIn))
+      .join("");
+    lunchHTMLString += `</div>`;
 
     lunchHTMLString = `<h2>Lunch</h2>`;
     lunchHTMLString += `<div class="row lunch">`;

@@ -65,3 +65,4 @@ const startSO = () => {
 // application checks for a user
 // checkForUser();
 startSO()
+// sortByPrice()
