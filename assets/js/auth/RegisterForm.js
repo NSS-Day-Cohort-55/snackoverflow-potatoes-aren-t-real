@@ -7,6 +7,7 @@ export const RegisterForm = () => {
 
   contentElement.addEventListener("click", event => {
     if (event.target.id === "register__submit") {
+      event.preventDefault();
       const userObject = {
         name: document.querySelector("#register_name").value,
         email: document.querySelector("#register_email").value,
